@@ -10,6 +10,7 @@ use Mediconesystems\LivewireDatatables\Http\Livewire\LivewireDatatable;
 
 class ServiceDatatable extends LivewireDatatable
 {
+
     public function builder()
     {
 
@@ -36,9 +37,9 @@ class ServiceDatatable extends LivewireDatatable
             Column::name('phone')->label('លេខទូរស័ព្ទ')
                 ->searchable(),
             Column::callback(['id'], function ($id) {
-                return view('culture.table-actions', ['id' => $id]);
+                return view('livewire.service.table-actions', ['id' => $id]);
             })->label('សកម្មភាព'),
-            Column::delete()
+
         ];
     }
 

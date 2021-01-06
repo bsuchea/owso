@@ -116,9 +116,8 @@ class CreateService extends Component
         $com2 = Commune::where('district_id', '=', 203)->get();
         $vil2 = Village::where('commune_id', '=', $this->commune)->get();
 
-//        dd($ser_type);
 
-        return view('livewire.create-service')->with([
+        return view('livewire.service.create')->with([
             'ser_type' => $ser_type,
             'pro' => $pro,
             'dis' => $dis,
@@ -129,13 +128,6 @@ class CreateService extends Component
         ]);
 
     }
-
-//    public function del( $id ){
-//
-//        Service::destroy($id);
-//        Customer::destroy($id);
-//
-//    }
 
     public function clearForm(){
 

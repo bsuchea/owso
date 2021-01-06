@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\CreateService;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +21,8 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
 
     Route::view('/dashboard', 'dashboard' )->name('dashboard');
-    Route::view('/culture', 'culture.index' )->name('culture');
-    Route::view('/culture/create', 'culture.create' )->name('culture.create');
+    Route::view('/services', 'livewire.service.data' )->name('services');
+    Route::get('/service/create', CreateService::class )->name('service.create');
 
 });
 

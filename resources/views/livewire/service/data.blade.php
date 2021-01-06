@@ -11,7 +11,7 @@
             <div class="bg-white shadow-xl sm:rounded-lg">
                 <div class="p-6 sm:px-10 bg-white border-b border-gray-200">
 
-                    <a href="{{ route('culture.create') }}" class="bg-green-500 rounded p-2 px-6 text-white text-sm">New Service</a> <br>
+                    <a href="{{ route('service.create') }}" class="bg-green-500 rounded p-2 px-6 text-white text-sm">New Service</a> <br>
 
                     <div class="mt-3">
                         <livewire:service-datatable exportable="true"/>
