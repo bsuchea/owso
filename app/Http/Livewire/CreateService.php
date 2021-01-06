@@ -6,6 +6,7 @@ use App\Models\Commune;
 use App\Models\Customer;
 use App\Models\District;
 use App\Models\Province;
+use App\Models\Sector;
 use App\Models\Service;
 use App\Models\ServiceType;
 use App\Models\Village;
@@ -26,7 +27,8 @@ class CreateService extends Component
         $customer_email,
         $gender, $dob, $national_id, $national = 'ខ្មែរ';
 
-    public $service_type,
+    public $sector,
+        $service_type,
         $business_type,
         $brand_name_kh,
         $brand_name_en,
@@ -37,6 +39,8 @@ class CreateService extends Component
         $home,
         $phone,
         $email;
+
+    public $successMsg;
 
     protected $rules = [
 
@@ -70,7 +74,7 @@ class CreateService extends Component
 
         $service = new Service();
         $service->service_type_id = $this->service_type;
-        $service->sector_id = 1;
+        $service->sector_id = $this->sector;
         $service->brand_namekh = $this->brand_name_kh;
         $service->brand_nameen = $this->brand_name_en;
         $service->business_type = $this->business_type;
@@ -101,23 +105,25 @@ class CreateService extends Component
 
         $this->successMsg = 'ព័ត៌មានរបស់លោកអ្នកត្រូវបានរក្សាទុកដោយជោគជ័យ!';
 
+        return redirect()->to('/services');
 
     }
 
     public function render()
     {
-        $ser_type = ServiceType::where('sector_id', '=', 1)->get();
+        $sec = Sector::all();
+        $ser_type = ServiceType::where('sector_id', '=', $this->sector)->get();
+
         $pro = Province::all();
         $dis = District::where('province_id', '=', $this->customer_province)->get();
         $com = Commune::where('district_id', '=', $this->customer_district)->get();
         $vil = Village::where('commune_id', '=', $this->customer_commune)->get();
 
-
         $com2 = Commune::where('district_id', '=', 203)->get();
         $vil2 = Village::where('commune_id', '=', $this->commune)->get();
 
-
         return view('livewire.service.create')->with([
+            'sec' => $sec,
             'ser_type' => $ser_type,
             'pro' => $pro,
             'dis' => $dis,
