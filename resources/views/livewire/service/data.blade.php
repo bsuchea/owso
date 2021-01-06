@@ -2,7 +2,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl text-blue-700 leading-tight">
-            {{ __('វិស័យវប្បធម៌ និងវិចិត្រសិល្បៈ') }}
+            {{ __('សេវាលើវិស័យ') }}
         </h2>
     </x-slot>
 

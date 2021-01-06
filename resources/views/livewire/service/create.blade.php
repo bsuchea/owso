@@ -2,7 +2,7 @@
 
     <x-slot name="header">
         <h2 class="text-xl text-blue-700 leading-tight">
-            {{ __('សេវា') }}
+            {{ __('ទំរង់បញ្ជូលសេវាថ្នី') }}
         </h2>
     </x-slot>
 
@@ -60,7 +60,7 @@
                                                class="block text-sm font-medium text-gray-700">ភេទ</label>
                                         <select wire:model="gender" id="gender" name="gender"
                                                 class="form-input rounded-md shadow-sm mt-1 block w-full">
-                                            <option value="">-- ជ្រើសរើស --</option>
+                                            <option value="">---</option>
                                             <option value="ប្រុស">ប្រុស</option>
                                             <option value="ស្រី">ស្រី</option>
                                         </select>
