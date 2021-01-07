@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\CreateService;
+use \App\Http\Livewire\EditService;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::view('/dashboard', 'dashboard' )->name('dashboard');
     Route::view('/services', 'livewire.service.data' )->name('services');
     Route::get('/service/create', CreateService::class )->name('service.create');
+    Route::get('/service/{id}/edit', EditService::class )->name('service.edit');
 
 });
 

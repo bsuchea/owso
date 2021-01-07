@@ -32,7 +32,7 @@
                     </div>
 
                     <div class="mt-3">
-                        <livewire:service-datatable exportable="true"/>
+                        <livewire:service-datatable exportable="true" />
                     </div>
 
                 </div>

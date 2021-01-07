@@ -12,10 +12,11 @@ use App\Models\ServiceType;
 use App\Models\Village;
 use Livewire\Component;
 
-class CreateService extends Component
+class EditService extends Component
 {
 
-    public $customer_namekh, $customer_nameen,
+    public $customer_namekh,
+        $customer_nameen,
         $customer_province,
         $customer_district,
         $customer_commune,
@@ -25,7 +26,10 @@ class CreateService extends Component
         $customer_home,
         $customer_phone,
         $customer_email,
-        $gender, $dob, $national_id, $national = 'ខ្មែរ';
+        $gender, $dob,
+        $national_id,
+        $national = 'ខ្មែរ',
+        $customer_id;
 
     public $sector,
         $service_type,
@@ -38,7 +42,8 @@ class CreateService extends Component
         $group,
         $home,
         $phone,
-        $email;
+        $email,
+        $service_id;
 
     public $successMsg;
 
@@ -67,12 +72,44 @@ class CreateService extends Component
 
     }
 
+    public function mount($id){
+
+        $ser = Service::find($id);
+        $this->service_id = $id;
+        $this->sector = $ser->sector_id;
+        $this->service_type = $ser->service_type_id;
+        $this->brand_name_kh = $ser->brand_namekh;
+        $this->brand_name_en = $ser->brand_nameen;
+        $this->business_type = $ser->business_type;
+        $this->street = $ser->street;
+        $this->group = $ser->group;
+        $this->home = $ser->home;
+        $this->phone = $ser->phone;
+        $this->commune = $ser->commune()->first()['id'];
+        $this->village = $ser->village()->first()['id'];
+
+        $cus = Customer::find($id);
+        $this->customer_id = $id;
+        $this->customer_namekh = $cus->namekh;
+        $this->customer_nameen = $cus->nameen;
+        $this->gender = $cus->gender;
+        $this->dob = $cus->dob;
+        $this->customer_phone = $cus->phone;
+        $this->customer_email = $cus->email;
+        $this->customer_home = $cus->home;
+        $this->customer_group = $cus->group;
+        $this->customer_street = $cus->street;
+        $this->customer_province = $cus->province()->first()['id'];
+        $this->customer_district = $cus->district()->first()['id'];
+        $this->customer_commune = $cus->commune()->first()['id'];
+        $this->customer_village = $cus->village()->first()['id'];
+
+    }
+
     public function saveService()
     {
 
-        $this->validate();
-
-        $service = new Service();
+        $service = Service::find($this->service_id);
         $service->service_type_id = $this->service_type;
         $service->sector_id = $this->sector;
         $service->brand_namekh = $this->brand_name_kh;
@@ -86,7 +123,13 @@ class CreateService extends Component
         $service->commune_id = $this->commune;
         $service->save();
 
-        $customer = new Customer();
+    }
+
+
+    public function saveCustomer()
+    {
+
+        $customer = Customer::find($this->customer_id);
         $customer->namekh = $this->customer_namekh;
         $customer->nameen = $this->customer_nameen;
         $customer->gender = $this->gender;
@@ -104,12 +147,6 @@ class CreateService extends Component
         $customer->province_id = $this->customer_province;
         $customer->save();
 
-        $this->clearForm();
-
-        $this->successMsg = 'ព័ត៌មានរបស់លោកអ្នកត្រូវបានរក្សាទុកដោយជោគជ័យ!';
-
-        return redirect()->to('/services');
-
     }
 
     public function render()
@@ -125,7 +162,7 @@ class CreateService extends Component
         $com2 = Commune::where('district_id', '=', 203)->get();
         $vil2 = Village::where('commune_id', '=', $this->commune)->get();
 
-        return view('livewire.service.create')->with([
+        return view('livewire.service.edit')->with([
             'sec' => $sec,
             'ser_type' => $ser_type,
             'pro' => $pro,
@@ -137,12 +174,5 @@ class CreateService extends Component
         ]);
 
     }
-
-    public function clearForm(){
-
-        $this->reset();
-
-    }
-
 
 }

@@ -11,8 +11,6 @@ use Mediconesystems\LivewireDatatables\Http\Livewire\LivewireDatatable;
 class ServiceDatatable extends LivewireDatatable
 {
 
-    public $sector;
-
     public function builder()
     {
 

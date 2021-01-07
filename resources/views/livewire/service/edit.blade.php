@@ -2,7 +2,7 @@
 
     <x-slot name="header">
         <h2 class="text-xl text-blue-700 leading-tight">
-            {{ __('ទំរង់បញ្ជូលសេវាថ្នី') }}
+            {{ __('ទំរង់កែប្រែព័ត៌មានសេវា') }}
         </h2>
     </x-slot>
 
@@ -23,12 +23,19 @@
 
                 <div class="mt-5 md:mt-0 md:col-span-3">
 
-                    <form wire:submit.prevent="saveService" method="POST">
-                        <div class="shadow overflow-hidden sm:rounded-md">
+                    <div class="shadow overflow-hidden sm:rounded-md">
 
-                            @include('livewire.service.service-form')
+                        @include('livewire.service.service-form')
 
+                        <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                            <button wire:click="saveCustomer()" type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm
+                                    font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2
+                                    focus:ring-offset-2 focus:ring-indigo-500">
+                                រក្សាទុក
+                            </button>
                         </div>
+
+                    </div>
                 </div>
             </div>
 
@@ -53,15 +60,13 @@
                         @include('livewire.service.customer-form')
 
                         <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                            <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm
+                            <button wire:click="saveService()" type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm
                                     font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2
                                     focus:ring-offset-2 focus:ring-indigo-500">
                                 រក្សាទុក
                             </button>
                         </div>
                     </div>
-                </form>
-
 
                 </div>
             </div>
