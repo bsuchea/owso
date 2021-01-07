@@ -144,7 +144,7 @@
         <span class="name">: <ls class="font-head">{{ $cus->namekh }}
             </ls>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; អក្សឡាតាំង &ensp;&ensp;<b> {{ $cus->nameen }} </b> </span>
         <span class="s1">ប្រភេទអាជីវកម្ម-សេវាកម្ម-ពាណិជ្ជកម្ម </span>
-        <span class="ser_type">: បើកអាជីវកម្ម{{ $ser->business_type }}  </span>
+        <span class="ser_type">: {{ $ser->business_type }}  </span>
         <span class="b1">នាមករណ៍ </span>
         <span class="brand">: <b>{{ $ser->brand_namekh }} - {{ $ser->brand_nameen }}  </b></span>
         <span class="a1">អាសយដ្ឋានអាជីវកម្ម</span>

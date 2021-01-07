@@ -27,7 +27,7 @@
     left: 155px;
 }
 .nameen {
-    top: 245px;
+    top: 242px;
     left: 456px;
 }
 .gender {
@@ -35,7 +35,7 @@
     left: 720px;
 }
 .dob {
-    top: 270px;
+    top: 272px;
     left: 127px;
 }
 .national {
@@ -115,7 +115,7 @@
         <span class="nameen">{{ $cus->nameen }} </span>
         <span class="gender">{{ $cus->gender }}  </span>
         <span class="gender2">{{ $cus->gender }}  </span>
-{{--        <span class="dob">{{ formatDateKh($cus->dob,'d') }}-{{ formatDateKh($cus->dob,'mm') }}-{{ formatDateKh($cus->dob,'y') }} </span>--}}
+        <span class="dob">{{ formatDateKh($cus->dob,'d') }}-{{ formatDateKh($cus->dob,'mm') }}-{{ formatDateKh($cus->dob,'y') }} </span>
         <span class="national">{{ $cus->national }} </span>
         <span class="natid">{{ $cus->national_id }} </span>
         <span class="bus_type3">អាជីវកម្ម{{ $ser->business_type }} </span>
