@@ -95,6 +95,8 @@ class EditService extends Component
         $this->gender = $cus->gender;
         $this->dob = $cus->dob;
         $this->customer_phone = $cus->phone;
+        $this->national = $cus->national;
+        $this->national_id = $cus->national_id;
         $this->customer_email = $cus->email;
         $this->customer_home = $cus->home;
         $this->customer_group = $cus->group;

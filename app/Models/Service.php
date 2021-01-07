@@ -12,8 +12,6 @@ class Service extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $table = "services";
-
     public function sector(){
 
         return $this->belongsTo(Sector::class);

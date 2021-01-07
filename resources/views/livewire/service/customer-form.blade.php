@@ -2,7 +2,7 @@
                             <div class="grid grid-cols-6 gap-2">
                                 <div class="col-span-6 sm:col-span-2">
                                     <label for="first_name"
-                                           class="block text-sm font-medium text-gray-700">សេវា </label>
+                                           class="block text-sm font-medium text-gray-700">វិស័យ </label>
                                     <select name="sector" wire:model="sector"
                                             class="form-input rounded-md mb-1 block w-full">
                                         <option value="">-- ជ្រើសរើស --</option>
