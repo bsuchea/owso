@@ -104,11 +104,9 @@ class CreateService extends Component
         $customer->province_id = $this->customer_province;
         $customer->save();
 
-        $this->clearForm();
+        $this->msgSuccess();
 
-        $this->successMsg = 'ព័ត៌មានរបស់លោកអ្នកត្រូវបានរក្សាទុកដោយជោគជ័យ!';
-
-        return redirect()->to('/services');
+        $this->reset();
 
     }
 
@@ -144,5 +142,18 @@ class CreateService extends Component
 
     }
 
+    public function msgSuccess(){
+        $this->alert('success', 'Save success!', [
+              'position' =>  'center-end',
+              'timer' =>  '2000',
+              'toast' =>  true,
+              'text' =>  '',
+              'confirmButtonText' =>  'Ok',
+              'cancelButtonText' =>  'Cancel',
+              'showCancelButton' =>  false,
+              'showConfirmButton' =>  false,
+        ]);
+
+    }
 
 }

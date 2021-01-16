@@ -125,6 +125,8 @@ class EditService extends Component
         $service->commune_id = $this->commune;
         $service->save();
 
+        $this->msgSuccess();
+
     }
 
 
@@ -148,6 +150,8 @@ class EditService extends Component
         $customer->district_id = $this->customer_district;
         $customer->province_id = $this->customer_province;
         $customer->save();
+
+        $this->msgSuccess();
 
     }
 
@@ -175,6 +179,19 @@ class EditService extends Component
             'vil2' => $vil2,
         ]);
 
+    }
+
+    public function msgSuccess(){
+        $this->alert('success', 'Save success!', [
+              'position' =>  'center-end',
+              'timer' =>  '2000',
+              'toast' =>  true,
+              'text' =>  '',
+              'confirmButtonText' =>  'Ok',
+              'cancelButtonText' =>  'Cancel',
+              'showCancelButton' =>  false,
+              'showConfirmButton' =>  false,
+        ]);
     }
 
 }

@@ -10,13 +10,6 @@
             <div class="bg-white shadow-xl sm:rounded-lg">
                 <div class="p-6 sm:px-10 bg-white border-b border-gray-200">
                     <div class="flex items-center justify-end">
-                        <div class="w-2/6 px-5">
-                            <select name="sector" wire:model="sector" class="form-input mr-5 ml-1 w-full">
-                                <option value="">-- ជ្រើសរើសវិស័យ --</option>
-                                <option value="1">វិស័យវប្បធម៌ និងវិចិត្រសិល្បៈ</option>
-                                <option value="2">វិស័យពាណិជ្ជកម្ម</option>
-                            </select>
-                        </div>
                         <div class="w-1/6">
                             <a href="{{ route('service.create') }}"
                                class="group flex items-center px-5 py-3 rounded-md bg-blue-100 text-blue-600 text-sm font-medium hover:bg-blue-200 hover:text-blue-800">
