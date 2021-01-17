@@ -37,6 +37,8 @@ class ServiceController extends Controller
 
         $cus = Customer::find($id);
 
+        $op = Option::all();
+
         $pro = $cus->province()->first();
         $dis = $cus->district()->first();
         $com = $cus->commune()->first();
@@ -57,6 +59,8 @@ class ServiceController extends Controller
             'ser_type' => $ser_type,
             'com2' => $com2,
             'vil2' => $vil2,
+            'date_kh' => $op[0]['name'],
+            'date_gen' =>$op[1]['name'],
         ]);
 
     }

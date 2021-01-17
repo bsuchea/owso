@@ -24,7 +24,7 @@
         }
 .namekh {
     top: 245px;
-    left: 155px;
+    left: 160px;
 }
 .nameen {
     top: 242px;
@@ -103,6 +103,27 @@
     top: 1480px;
     left: 370px;
 }
+.t7, .t8 , .t9 {
+    font-family: "Khmer", "Khmer OS Battambang", "Khmer OS Siemreap";
+    position: absolute;
+    font-size: 15px;
+    border: none;
+    background: none;
+    text-align: center;
+    width: 430px;
+    height: 20px;
+    left: 345px;
+}
+.t8{
+    top: 840px;
+}
+.t9 {
+    top: 868px;
+}
+.t7 {
+    top: 893px;
+    height: 25px;
+}
 
 
     </style>
@@ -130,6 +151,9 @@
         <span class="ser_group">{{ $ser->group }}</span>
         <span class="ser_village">{{ $vil2->namekh }} </span>
         <span class="ser_commune">{{ $com2->namekh }} </span>
+        <input class="t8" value="{{ $date_kh }}" >
+        <input type="text" value="ក្រុងបាត់ដំបង {{ $date_gen }}" class="t9">
+        <input type="text" value="មន្ដ្រីទទួលបន្ទុក" class="t7">
 
     </div>
 </body>
