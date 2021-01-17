@@ -107,22 +107,37 @@
     top: 500px;
     left: 200px;
 }
-.t8 {
-    top: 530px;
+.t8 , .t9 {
+    font-family: "Khmer", "Khmer OS Battambang", "Khmer OS Siemreap";
+    position: absolute;
+    font-size: 16px;
+    border: none;
+    background: none;
+    text-align: center;
+    width: 430px;
+    height: 20px;
     left: 635px;
+}
+.t8{
+    top: 530px;
 }
 .t9 {
     top: 562px;
-    left: 700px;
 }
+
 .t10 {
     top: 590px;
     left: 825px;
 }
-.t11 {
-    font-size: 12px;
-    top: 700px;
-    left: 125px;
+.num{
+    position: absolute;
+    font-size: 18px;
+    border: none;
+    background: none;
+    text-align: center;
+    top: 203px;
+    left: 185px;
+    width: 125px;
 }
 
 
@@ -137,6 +152,7 @@
         <span class="h3 font-head">រដ្ឋបាលក្រុងបាត់ដំបង</span>
         <span class="h4 font-head">ការិយាល័យច្រកចេញចូលតែមួយ</span>
         <span class="h5">លេខៈ…………………………កបប.ច្រក.១</span>
+        <input type="text" value="០០៧" class="num">
         <span class="h6 font-head">បណ្ណអនុញ្ញាត</span>
         <span class="h7 font-head">ប្រកបអាជីវកម្ម-សេវាកម្ម-ពាណិជ្ជកម្ម</span>
         <span class="h8 font-head">អភិបាលក្រុងបាត់ដំបង</span>
@@ -156,9 +172,9 @@
             ភូមិ{{ $vil2->namekh }} សង្កាត់{{ $com2->namekh }} ក្រុងបាត់ដំបង ខេត្ដបាត់ដំបង។
         </span>
         <span class="t6">អ្នកកាន់លិខិតអនុញ្ញាតត្រូវគោពរយ៉ាងម៉ឺងម៉ាត់តាមច្បាប់ និង បទបញ្ញត្តិផ្សេងៗ ហើយត្រូវដាក់តាំងបង្ហាញជាសាធារណៈ  ។</span>
-        <span class="t7">បណ្ណអនុញ្ញាតសេវាកម្មនេះមានសុពលភាពត្រឹមថ្ងៃទី………… ខែ………………  ឆ្នាំ២០២២។ </span>
-        <span class="t8">ថ្ងៃ…………..………..ខែ…………… ឆ្នាំជូត ទោស័ក ព.ស. ២៥៦៤</span>
-        <span class="t9">ក្រុងបាត់ដំបង ថ្ងៃទី……… ខែ…………… ឆ្នាំ២០២១ </span>
+        <span class="t7">បណ្ណអនុញ្ញាតសេវាកម្មនេះមានសុពលភាពត្រឹម {{ $date_gen }}។ </span>
+        <input class="t8" value="{{ $date_kh }}" >
+        <input type="text" value="ក្រុងបាត់ដំបង {{ $date_gen }}" class="t9">
         <span class="t10 font-head">អភិបាលក្រុង </span>
         <!-- <span class="t11">បញ្ជាក់៖ បណ្ណអនុញ្ញាតនេះត្រូវដាក់តាំង ឬ ព្យួរនៅកន្លែងទទួលភ្ញៀវ  </span> -->
 
