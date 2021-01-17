@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Models\Option;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -12,6 +13,8 @@ class ServiceController extends Controller
     public function printLic($id){
 
         $cus = Customer::find($id);
+
+        $op = Option::all();
 
         $ser = Service::find($id);
         $ser_type = $ser->serviceType()->first();
@@ -24,6 +27,8 @@ class ServiceController extends Controller
             'ser_type' => $ser_type,
             'com2' => $com2,
             'vil2' => $vil2,
+            'date_kh' => $op[0]['name'],
+            'date_gen' =>$op[1]['name'],
         ]);
 
     }
@@ -31,6 +36,8 @@ class ServiceController extends Controller
     public function printDis($id){
 
         $cus = Customer::find($id);
+
+        $op = Option::all();
 
         $pro = $cus->province()->first();
         $dis = $cus->district()->first();
@@ -52,6 +59,8 @@ class ServiceController extends Controller
             'ser_type' => $ser_type,
             'com2' => $com2,
             'vil2' => $vil2,
+            'date_kh' => $op[0]['name'],
+            'date_gen' =>$op[1]['name'],
         ]);
 
     }

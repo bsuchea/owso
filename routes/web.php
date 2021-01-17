@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
 
-    Route::view('/dashboard', 'dashboard' )->name('dashboard');
+    Route::get('/dashboard', \App\Http\Livewire\Dashboard::class )->name('dashboard');
     Route::view('/services', 'livewire.service.data' )->name('services');
     Route::get('/service/create', CreateService::class )->name('service.create');
     Route::get('/service/{id}/edit', EditService::class )->name('service.edit');
