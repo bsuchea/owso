@@ -4,6 +4,10 @@
     <meta charset = "utf-8">
     <title>Application Form</title>
     <style>
+        @font-face {
+  font-family: 'header';
+  src: url('/css/fonts/KhmerOSmuollight.ttf') format('truetype');
+}
         body{
             font-family: "Khmer", "Khmer OS Battambang", "Khmer OS Siemreap";
         }
@@ -17,7 +21,7 @@
             background-size: 1185px 820px;
         }
         .font-head{
-            font-family: "Khmer OS Muol Light", "Khmer OS Muol";
+            font-family: "header";
         }
         span {
             position: absolute;
@@ -162,7 +166,7 @@
         <span class="s1">ប្រភេទអាជីវកម្ម-សេវាកម្ម-ពាណិជ្ជកម្ម </span>
         <span class="ser_type">: {{ $ser->business_type }}  </span>
         <span class="b1">នាមករណ៍ </span>
-        <span class="brand">: <b>{{ $ser->brand_namekh }} - {{ $ser->brand_nameen }}  </b></span>
+        <span class="brand">: <b>{{ $ser->brand_namekh }} {{ $ser->brand_nameen==''?'':'- '.$ser->brand_nameen }}  </b></span>
         <span class="a1">អាសយដ្ឋានអាជីវកម្ម</span>
         <span class="addr">
             : {{ $ser->home==''?'':'ផ្ទះលេខ'.$ser->home }}
