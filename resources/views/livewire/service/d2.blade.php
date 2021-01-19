@@ -14,7 +14,7 @@
             background: url("/img/d2.png");
             background-repeat: no-repeat;
             background-size: 800px 1100px;
-            margin-top: 23px;
+            margin-top: 25px;
         }
         .font-head{
             font-family: "Khmer OS Muol Light", "Khmer OS Muol";
@@ -93,7 +93,7 @@
 }
 .namekh2 {
     top: 393px;
-    left: 330px;
+    left: 400px;
 }
 .gender2 {
     top: 393px;

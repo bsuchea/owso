@@ -156,7 +156,7 @@
         <span class="h3 font-head">រដ្ឋបាលក្រុងបាត់ដំបង</span>
         <span class="h4 font-head">ការិយាល័យច្រកចេញចូលតែមួយ</span>
         <span class="h5">លេខៈ…………………………កបប.ច្រក.១</span>
-        <input type="text" value="០០៧" class="num">
+        <input type="text" class="num">
         <span class="h6 font-head">បណ្ណអនុញ្ញាត</span>
         <span class="h7 font-head">ប្រកបអាជីវកម្ម-សេវាកម្ម-ពាណិជ្ជកម្ម</span>
         <span class="h8 font-head">អភិបាលក្រុងបាត់ដំបង</span>
