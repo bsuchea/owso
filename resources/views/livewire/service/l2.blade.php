@@ -190,5 +190,10 @@
         <!-- <span class="t11">បញ្ជាក់៖ បណ្ណអនុញ្ញាតនេះត្រូវដាក់តាំង ឬ ព្យួរនៅកន្លែងទទួលភ្ញៀវ  </span> -->
 
     </div>
+
+<script type="application/javascript">
+    window.onafterprint = function () { window.close(); }
+</script>
+
 </body>
 </html>
