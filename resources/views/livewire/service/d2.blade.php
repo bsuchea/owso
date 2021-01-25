@@ -94,11 +94,7 @@
 }
 .namekh2 {
     top: 393px;
-<<<<<<< HEAD
     left: 400px;
-=======
-    left: 370px;
->>>>>>> b93183729b9f8d7857cc45a6f9b9f159bc0f5478
 }
 .gender2 {
     top: 393px;
