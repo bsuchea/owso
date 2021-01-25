@@ -145,6 +145,13 @@
 }
 
 
+@media print {
+
+  @page {
+      size: A4 landscape;
+  }
+
+}
 
     </style>
 </head>
@@ -164,9 +171,9 @@
         <span class="name">: <ls class="font-head">{{ $cus->namekh }}
             </ls>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; អក្សឡាតាំង &ensp;&ensp;<b> {{ $cus->nameen }} </b> </span>
         <span class="s1">ប្រភេទអាជីវកម្ម-សេវាកម្ម-ពាណិជ្ជកម្ម </span>
-        <span class="ser_type">: {{ $ser->business_type }}  </span>
+        <span class="ser_type font-head">: {{ $ser->business_type }}  </span>
         <span class="b1">នាមករណ៍ </span>
-        <span class="brand">: <b>{{ $ser->brand_namekh }} {{ $ser->brand_nameen==''?'':'- '.$ser->brand_nameen }}  </b></span>
+        <span class="brand font-head">: {{ $ser->brand_namekh }} <b>{{ $ser->brand_nameen==''?'':'- '.$ser->brand_nameen }}  </b></span>
         <span class="a1">អាសយដ្ឋានអាជីវកម្ម</span>
         <span class="addr">
             : {{ $ser->home==''?'':'ផ្ទះលេខ'.$ser->home }}
