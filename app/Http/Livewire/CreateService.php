@@ -138,7 +138,7 @@ class CreateService extends Component
     }
 
     public function msgSuccess(){
-        $this->alert('success', 'Save success!', [
+        $this->alert('success', 'រក្សាទុកបានដោយជោកជ័យ!', [
               'position' =>  'center-end',
               'timer' =>  '2000',
               'toast' =>  true,

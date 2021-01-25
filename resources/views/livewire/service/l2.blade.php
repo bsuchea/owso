@@ -145,6 +145,13 @@
 }
 
 
+@media print {
+
+  @page {
+      size: A4 landscape;
+  }
+
+}
 
     </style>
 </head>
@@ -156,7 +163,7 @@
         <span class="h3 font-head">រដ្ឋបាលក្រុងបាត់ដំបង</span>
         <span class="h4 font-head">ការិយាល័យច្រកចេញចូលតែមួយ</span>
         <span class="h5">លេខៈ…………………………កបប.ច្រក.១</span>
-        <input type="text" value="០០៧" class="num">
+        <input type="text" class="num">
         <span class="h6 font-head">បណ្ណអនុញ្ញាត</span>
         <span class="h7 font-head">ប្រកបអាជីវកម្ម-សេវាកម្ម-ពាណិជ្ជកម្ម</span>
         <span class="h8 font-head">អភិបាលក្រុងបាត់ដំបង</span>
@@ -164,9 +171,9 @@
         <span class="name">: <ls class="font-head">{{ $cus->namekh }}
             </ls>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; អក្សឡាតាំង &ensp;&ensp;<b> {{ $cus->nameen }} </b> </span>
         <span class="s1">ប្រភេទអាជីវកម្ម-សេវាកម្ម-ពាណិជ្ជកម្ម </span>
-        <span class="ser_type">: {{ $ser->business_type }}  </span>
+        <span class="ser_type font-head">: {{ $ser->business_type }}  </span>
         <span class="b1">នាមករណ៍ </span>
-        <span class="brand">: <b>{{ $ser->brand_namekh }} {{ $ser->brand_nameen==''?'':'- '.$ser->brand_nameen }}  </b></span>
+        <span class="brand font-head">: {{ $ser->brand_namekh }} <b>{{ $ser->brand_nameen==''?'':'- '.$ser->brand_nameen }}  </b></span>
         <span class="a1">អាសយដ្ឋានអាជីវកម្ម</span>
         <span class="addr">
             : {{ $ser->home==''?'':'ផ្ទះលេខ'.$ser->home }}

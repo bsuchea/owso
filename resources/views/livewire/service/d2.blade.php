@@ -27,6 +27,7 @@
     left: 160px;
 }
 .nameen {
+    text-transform: uppercase;
     top: 242px;
     left: 456px;
 }
@@ -40,7 +41,7 @@
 }
 .national {
     top: 272px;
-    left: 311px;
+    left: 315px;
 }
 .natid {
     top: 272px;
@@ -93,7 +94,7 @@
 }
 .namekh2 {
     top: 393px;
-    left: 330px;
+    left: 370px;
 }
 .gender2 {
     top: 393px;
@@ -103,7 +104,7 @@
     top: 1480px;
     left: 370px;
 }
-.t7, .t8 , .t9 {
+.t7, .t8 , .t9, .t10 {
     font-family: "Khmer", "Khmer OS Battambang", "Khmer OS Siemreap";
     position: absolute;
     font-size: 15px;
@@ -124,7 +125,20 @@
     top: 893px;
     height: 25px;
 }
+.t10 {
+    top: 990px;
+    width: 230px;
+    height: 25px;
+    left: 500px;
+}
 
+@media print {
+
+  @page {
+      size: A4 portrait;
+  }
+
+}
 
     </style>
 </head>
@@ -155,6 +169,12 @@
         <input type="text" value="ក្រុងបាត់ដំបង {{ $date_gen }}" class="t9">
         <input type="text" value="មន្ដ្រីទទួលបន្ទុក" class="t7">
 
+        <input type="text" value="សំរិទ្ធ សុគន្ធវារី" class="t10">
+
     </div>
+
+    <script type="application/javascript">
+        window.onload = function() { window.print(); }
+    </script>
 </body>
 </html>
