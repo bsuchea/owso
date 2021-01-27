@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use App\Models\Option;
 use App\Models\Service;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -14,12 +15,14 @@ class ServiceController extends Controller
 
         $cus = Customer::find($id);
 
-        $op = Option::all();
-
         $ser = Service::find($id);
         $ser_type = $ser->serviceType()->first();
         $com2 = $ser->commune()->first();
         $vil2 = $ser->village()->first();
+
+        $op = Option::all();
+        $date_ex = rtrim($op[1]['name'],'១');
+        $date_ex .= '២';
 
         return view("livewire.service.l$ser->sector_id")->with([
             'cus' => $cus,
@@ -29,6 +32,7 @@ class ServiceController extends Controller
             'vil2' => $vil2,
             'date_kh' => $op[0]['name'],
             'date_gen' =>$op[1]['name'],
+            'date_ex' => $date_ex,
         ]);
 
     }
