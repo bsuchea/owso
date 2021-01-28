@@ -150,7 +150,7 @@
         <span class="nameen">{{ $cus->nameen }} </span>
         <span class="gender">{{ $cus->gender }}  </span>
         <span class="gender2">{{ $cus->gender }}  </span>
-        <span class="dob">{{ formatDateKh($cus->dob) }} </span>
+        <span class="dob">{{ $cus->dob==''?'': formatDateKh($cus->dob) }} </span>
         <span class="national">{{ $cus->national }} </span>
         <span class="natid">{{ $cus->national_id }} </span>
         <span class="bus_type3">អាជីវកម្ម{{ $ser->business_type }} </span>

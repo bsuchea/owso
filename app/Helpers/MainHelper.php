@@ -49,83 +49,85 @@ if (!function_exists('formatDateKh')) {
 
         $date = parseDateToArray($date_string);
 
-        if($format == 'd') return $date['d'];
+        if ($format == 'd') return $date['d'];
 
-        elseif($format == 'm') return $date['m'];
+        elseif ($format == 'm') return $date['m'];
 
-        elseif($format == 'mm') return $date['mk'];
+        elseif ($format == 'mm') return $date['mk'];
 
-        elseif($format == 'y') return $date['y'];
+        elseif ($format == 'y') return $date['y'];
 
-        else return $date['d'].'-'.$date['mk'].'-'.$date['y'];
+        else return $date['d'] . '-' . $date['mk'] . '-' . $date['y'];
 
     }
 
     function parseDateToArray($date_string)
     {
-      //must use format  y/m/d  - ex 2020-03-27
-      $array_result = array();
+        //must use format  y/m/d  - ex 2020-03-27
+        $array_result = array();
 
-      $date_string = date_format(date_create($date_string), "Y-m-d");
+        $date_string = date_format(date_create($date_string), "Y-m-d");
 
-      $arr_date = explode("-", $date_string);
+        $arr_date = explode("-", $date_string);
 
-      $array_result['y'] = convertToKhmerNumber($arr_date[0]);
-      $array_result['m'] = convertToKhmerNumber($arr_date[1]);
-      $array_result['mk'] = convertToKhmerMonth($arr_date[1]);
-      $array_result['d'] = convertToKhmerNumber($arr_date[2]);
+        $array_result['y'] = convertToKhmerNumber($arr_date[0]);
+        $array_result['m'] = convertToKhmerNumber($arr_date[1]);
+        $array_result['mk'] = convertToKhmerMonth($arr_date[1]);
+        $array_result['d'] = convertToKhmerNumber($arr_date[2]);
 
-      return $array_result;
+        return $array_result;
     }
+}
 
+if (!function_exists('convertToKhmerNumber')) {
     function convertToKhmerNumber($input)
     {
-      $result = '';
-      for ($i = 0; $i < strlen($input); $i++)
-      {
-        $single_char = substr($input, $i, 1);
+        $result = '';
+        for ($i = 0; $i < strlen($input); $i++) {
+            $single_char = substr($input, $i, 1);
 
-        switch ($single_char)
-        {
-          case '0':
-            $single_char = '០';
-            break;
-          case '1':
-            $single_char = '១';
-            break;
-          case '2':
-            $single_char = '២';
-            break;
-          case '3':
-            $single_char = '៣';
-            break;
-          case '4':
-            $single_char = '៤';
-            break;
-          case '5':
-            $single_char = '៥';
-            break;
-          case '6':
-            $single_char = '៦';
-            break;
-          case '7':
-            $single_char = '៧';
-            break;
-          case '8':
-            $single_char = '៨';
-            break;
-          case '9':
-            $single_char = '៩';
-            break;
-          default:
-            $single_char= '';
-            break;
+            switch ($single_char) {
+                case '0':
+                    $single_char = '០';
+                    break;
+                case '1':
+                    $single_char = '១';
+                    break;
+                case '2':
+                    $single_char = '២';
+                    break;
+                case '3':
+                    $single_char = '៣';
+                    break;
+                case '4':
+                    $single_char = '៤';
+                    break;
+                case '5':
+                    $single_char = '៥';
+                    break;
+                case '6':
+                    $single_char = '៦';
+                    break;
+                case '7':
+                    $single_char = '៧';
+                    break;
+                case '8':
+                    $single_char = '៨';
+                    break;
+                case '9':
+                    $single_char = '៩';
+                    break;
+                default:
+                    $single_char = '';
+                    break;
+            }
+            $result = $result . $single_char;
         }
-        $result = $result . $single_char;
-      }
-      return $result;
+        return $result;
     }
+}
 
+if (!function_exists('convertToKhmerMonth')) {
     function convertToKhmerMonth($input)
     {
         $result = '';
