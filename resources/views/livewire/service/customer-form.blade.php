@@ -122,14 +122,21 @@
                                     <x-jet-input-error for="home" class="mt-2"/>
                                 </div>
 
-                                <div class="col-span-6 sm:col-span-3">
+                                <div class="col-span-3 sm:col-span-2">
+                                    <label class="block text-sm font-medium text-gray-700">ទីតាំង</label>
+                                    <input type="text" name="locate" id="locate" wire:model="locate"
+                                           class="form-input rounded-md mb-1 block w-full">
+                                    <x-jet-input-error for="locate" class="mt-2"/>
+                                </div>
+
+                                <div class="col-span-6 sm:col-span-2">
                                     <label for="postal_code"
                                            class="block text-sm font-medium text-gray-700">លេខទូរស័ព្ទ </label>
                                     <input type="text" name="phone" id="phone" wire:model="phone"
                                            class="form-input rounded-md mb-1 block w-full">
                                     <x-jet-input-error for="phone" class="mt-2"/>
                                 </div>
-                                <div class="col-span-6 sm:col-span-3">
+                                <div class="col-span-6 sm:col-span-2">
                                     <label for="postal_code" class="block text-sm font-medium text-gray-700">
                                         វ៉ិបសាយឬអ៊ីមែល </label>
                                     <input type="text" name="email" id="email" wire:model="email"

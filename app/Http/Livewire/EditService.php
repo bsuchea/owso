@@ -39,6 +39,7 @@ class EditService extends Component
         $commune,
         $village,
         $street,
+        $locate,
         $group,
         $home,
         $phone,
@@ -79,6 +80,7 @@ class EditService extends Component
         $this->street = $ser->street;
         $this->group = $ser->group;
         $this->home = $ser->home;
+        $this->locate = $ser->locate;
         $this->phone = $ser->phone;
         $this->commune = $ser->commune()->first()['id'];
         $this->village = $ser->village()->first()['id'];
@@ -116,6 +118,7 @@ class EditService extends Component
         $service->home = $this->home;
         $service->group = $this->group;
         $service->street = $this->street;
+        $service->locate = $this->locate;
         $service->village_id = $this->village;
         $service->commune_id = $this->commune;
         $service->save();

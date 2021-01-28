@@ -52,59 +52,59 @@
     left: 140px;
 }
 .h6 {
-    top: 210px;
+    top: 215px;
     left: 520px;
     font-size: 25px;
 }
 
 .h7 {
-    top: 250px;
+    top: 260px;
     left: 420px;
     font-size: 20px;
 }
 
 .h8 {
-    top: 284px;
+    top: 295px;
     left: 502px;
     font-size: 18px;
 }
 
 .n1 {
-    top: 335px;
+    top: 340px;
     left: 145px;
 }
 .name {
-    top: 335px;
+    top: 340px;
     left: 425px;
 } .name b {
     text-transform: uppercase;
 }
 .s1 {
-    top: 370px;
+    top: 373px;
     left: 145px;
 }
 .ser_type {
-    top: 370px;
+    top: 373px;
     left: 425px;
 }
 .b1 {
-    top: 402px;
+    top: 407px;
     left: 145px;
 }
 .brand {
-    top: 402px;
+    top: 407px;
     left: 425px;
 }
 .a1 {
-    top: 435px;
+    top: 438px;
     left: 145px;
 }
 .addr {
-    top: 435px;
+    top: 438px;
     left: 425px;
 }
 .t6 {
-    top: 470px;
+    top: 472px;
     left: 200px;
 }
 .t7 {
@@ -134,16 +134,29 @@
     left: 825px;
 }
 .num{
+    font-family: "Khmer", "Khmer OS Battambang", "Khmer OS Siemreap";
     position: absolute;
-    font-size: 18px;
+    font-size: 17px;
     border: none;
     background: none;
     text-align: center;
-    top: 203px;
+    top: 200px;
     left: 185px;
     width: 125px;
 }
+input[type="text"]:focus {
+    outline: 0px;
+}
 
+.photobox{
+    position: absolute;
+    width: 85px;
+    height: 105px;
+    text-align: center;
+    border: 1px solid #1a202c;
+    top: 215px;
+    left: 933px;
+}
 
 @media print {
 
@@ -157,6 +170,7 @@
 </head>
 <body>
     <div id="p1">
+        <div class="photobox"><br><br>4 x 6</div>
         <span class="h1 font-head">ព្រះរាជាណាចក្រកម្ពុជា</span>
         <span class="h2 font-head">ជាតិ សាសនា ព្រះមហាក្សត្រ</span>
         <img src="/img/img001.png" class="img001" alt="">
@@ -177,6 +191,7 @@
         <span class="a1">អាសយដ្ឋានអាជីវកម្ម</span>
         <span class="addr">
             : {{ $ser->home==''?'':'ផ្ទះលេខ'.$ser->home }}
+              {{ $ser->locate }}
               {{ $ser->street==''?'':'ផ្លូវ'.$ser->street }}
               {{ $ser->group==''?'':'ក្រុមទី'.$ser->group }}
 
@@ -184,7 +199,7 @@
         </span>
         <span class="t6">អ្នកកាន់លិខិតអនុញ្ញាតត្រូវគោពរយ៉ាងម៉ឺងម៉ាត់តាមច្បាប់ និង បទបញ្ញត្តិផ្សេងៗ ហើយត្រូវដាក់តាំងបង្ហាញជាសាធារណៈ  ។</span>
         <span class="t7">បណ្ណអនុញ្ញាតសេវាកម្មនេះមានសុពលភាពត្រឹម {{ $date_ex }}។ </span>
-        <input class="t8" value="{{ $date_kh }}" >
+        <input class="t8" value="{{ $date_kh }}" type="text" >
         <input type="text" value="ក្រុងបាត់ដំបង {{ $date_gen }}" class="t9">
         <span class="t10 font-head">អភិបាលក្រុង </span>
         <!-- <span class="t11">បញ្ជាក់៖ បណ្ណអនុញ្ញាតនេះត្រូវដាក់តាំង ឬ ព្យួរនៅកន្លែងទទួលភ្ញៀវ  </span> -->

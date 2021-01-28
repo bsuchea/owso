@@ -174,8 +174,8 @@
     </div>
 
     <script type="application/javascript">
-        window.onload = function() { window.print(); window.close(); };
-
+        window.onload = function() { window.print(); };
+        window.onafterprint = function () { window.close(); }
     </script>
 </body>
 </html>

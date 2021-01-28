@@ -36,6 +36,7 @@ class CreateService extends Component
         $village,
         $street,
         $group,
+        $locate,
         $home,
         $phone,
         $email;
@@ -77,6 +78,7 @@ class CreateService extends Component
         $service->home = $this->home;
         $service->group = $this->group;
         $service->street = $this->street;
+        $service->locate = $this->locate;
         $service->village_id = $this->village;
         $service->commune_id = $this->commune;
         $service->save();
